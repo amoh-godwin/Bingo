@@ -4,6 +4,7 @@ import QtQuick.Controls 2.3
 ToolButton {
 
     background: Rectangle {
+        width: parent.contentItem.implicitWidth
         color: "transparent"
     }
 

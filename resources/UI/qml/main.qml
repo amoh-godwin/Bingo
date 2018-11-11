@@ -3,6 +3,7 @@ import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 
 ApplicationWindow {
+    id: mainWindow
     visible: true
     width: 1024
     height: 480
@@ -16,6 +17,13 @@ ApplicationWindow {
     }
 
     header: RowLayout {
+        anchors {
+            left: parent.left
+            right: parent.right
+            rightMargin: 96
+        }
+
+        anchors.leftMargin: 96
         width: parent.width
         height: 48
 
@@ -29,17 +37,22 @@ ApplicationWindow {
             }
             RowLayout {
                 height: 48
+                spacing: 24
 
                 CustomToolButton {
                     text: qsTr('All')
                 }
 
                 CustomToolButton {
-                    text: qsTr('All')
+                    text: qsTr('Images')
                 }
 
                 CustomToolButton {
-                    text: qsTr('All')
+                    text: qsTr('Videos')
+                }
+
+                CustomToolButton {
+                    text: qsTr('News')
                 }
 
                 CustomToolButton {
@@ -51,19 +64,28 @@ ApplicationWindow {
                 }
 
                 CustomToolButton {
-                    text: qsTr('All')
+                    text: qsTr('MSN')
                 }
 
                 CustomToolButton {
-                    text: qsTr('All')
+                    text: qsTr('Office Online')
                 }
 
                 CustomToolButton {
-                    text: qsTr('All')
+                    text: qsTr('Outlook.com')
                 }
 
 
             }
+        }
+
+        Button {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            flat: true
+
+            onClicked: mainWindow.flags = Qt.Window
+
         }
 
         ToolBar {
@@ -94,4 +116,22 @@ ApplicationWindow {
         }
 
     }
+
+    Rectangle {
+        width: parent.width
+        height: parent.height
+        color: "transparent"
+
+        ColumnLayout {
+            width: parent.width
+            height: parent.height
+
+            RowLayout {
+                Layout.preferredHeight: 48
+            }
+
+        }
+
+    }
+
 }
