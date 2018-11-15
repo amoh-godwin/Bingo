@@ -20,10 +20,10 @@ ApplicationWindow {
         anchors {
             left: parent.left
             right: parent.right
-            rightMargin: 96
+            rightMargin: 48
         }
 
-        anchors.leftMargin: 96
+        anchors.leftMargin: 48
         width: parent.width
         height: 48
 
@@ -77,15 +77,6 @@ ApplicationWindow {
 
 
             }
-        }
-
-        Button {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            flat: true
-
-            onClicked: mainWindow.flags = Qt.Window
-
         }
 
         ToolBar {
